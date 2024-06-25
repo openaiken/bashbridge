@@ -1,0 +1,19 @@
+[Unit]
+Description=Discord/Minecraft Chat Bridge
+After=minecraft-server.service
+Requires=minecraft-server.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=exec
+User=bashbridge
+Group=bashbridge
+WorkingDirectory=/data/bashbridge
+ExecStartPre=/bin/sleep 10
+ExecStart=/data/bashbridge/chatbridge/bin/python3 bridge.py 2>&1
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
+
