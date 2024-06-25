@@ -6,8 +6,17 @@ import discord
 import os
 from discord.ext import commands
 from mcrcon import MCRcon, MCRconException
+import config
 
-# Configuration
+# Configuration Import
+MC_LOG_FILE_PATH = config.MC_LOG_FILE_PATH
+DISCORD_BOT_TOKEN = config.DISCORD_BOT_TOKEN
+DISCORD_CHANNEL_ID = config.DISCORD_CHANNEL_ID
+MINECRAFT_SERVER_IP = config.MINECRAFT_SERVER_IP
+RCON_PORT = config.RCON_PORT
+RCON_PASSWORD = config.RCON_PASSWORD
+
+# Regex for Minecraft server log filtering
 #\1 is username, \2 is message
 REGEX_MC_MESSAGE = r'\[\d\d:\d\d:\d\d\] \[Server thread\/INFO\]: <(\w*)> (.*)'
 REGEX_MC_MEACTION = r'\[\d\d:\d\d:\d\d\] \[Server thread\/INFO\]: \* (\w*) (.*)'
