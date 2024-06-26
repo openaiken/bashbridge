@@ -11,10 +11,10 @@ Rename the example config file to `config.ini` and edit the contents. This bridg
 Reads your minecraft server log. Chat messages, Player activity (join/leave/deaths/achievements), and Player actions (/me command) are extracted and posted to Discord with the player's username.
 
 Reads your Discord channel, and posts the messages in the Minecraft server with the /say command in a light blue font color, with the Discord user's server nickname or display_name. It has the following features:
-- When an image is posted, prepends the MC message with <image>
-- When a message has an embed, appends the MC message with <embed>
+- When an image is posted, prepends the MC message with \<image\>
+- When a message has an embed, appends the MC message with \<embed\>
 - When a message is a reply, prepends the MC message with (reply @discord_nickname)
-- When a message contains a link, replaces it with <example.com link>
+- When a message contains a link, replaces it with \<example.com link\>
 - When a message @s another user, sanitizes the @ symbol with a (r)
 - When a message contains emotes, their names are cleaned.
 - When a message is longer than 250 characters, it is split up and each part is sent in MC individually.
