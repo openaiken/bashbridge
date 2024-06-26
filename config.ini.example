@@ -1,0 +1,9 @@
+[minecraft]
+log_file_path = /path/to/your/minecraft/server/logs/latest.log
+server_ip = your.minecraft.server.ip # make this 127.0.0.1 if you're running bashbridge on the same host as the minecraft server
+rcon_port = 25575
+rcon_password = your_rcon_password
+
+[discord]
+bot_token = your_discord_bot_token
+channel_id = 123456789012345678  # Replace with your channel ID
