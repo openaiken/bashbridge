@@ -11,7 +11,8 @@ import configparser
 # Configuration Import
 config = configparser.ConfigParser()
 try:
-    config.read('config.ini')
+    config_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config.ini')
+    config.read(config_file_path)
 except Exception as e:
     print("Can't open config file (config.ini); {e}")
     exit
