@@ -12,7 +12,7 @@ import configparser
 config = configparser.ConfigParser()
 try:
     config.read('config.ini')
-except * as e:
+except Exception as e:
     print("Can't open config file (config.ini); {e}")
     exit
 MC_LOG_FILE_PATH = config['minecraft']['log_file_path']
