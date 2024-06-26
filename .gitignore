@@ -1,6 +1,7 @@
 # Stuff specific to this project's owner, openaiken:
 chatbridge/
 config.py
+config.ini
 *.pp
 .bash*
 .lesshst
