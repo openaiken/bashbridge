@@ -6,15 +6,21 @@ import discord
 import os
 from discord.ext import commands
 from mcrcon import MCRcon, MCRconException
-import config
+import configparser
 
 # Configuration Import
-MC_LOG_FILE_PATH = config.MC_LOG_FILE_PATH
-DISCORD_BOT_TOKEN = config.DISCORD_BOT_TOKEN
-DISCORD_CHANNEL_ID = config.DISCORD_CHANNEL_ID
-MINECRAFT_SERVER_IP = config.MINECRAFT_SERVER_IP
-RCON_PORT = config.RCON_PORT
-RCON_PASSWORD = config.RCON_PASSWORD
+config = configparser.ConfigParser()
+try:
+    config.read('config.ini')
+except * as e:
+    print("Can't open config file (config.ini); {e}")
+    exit
+MC_LOG_FILE_PATH = config['minecraft']['log_file_path']
+MINECRAFT_SERVER_IP = config['minecraft']['server_ip']
+RCON_PORT = config['minecraft']['rcon_port']
+RCON_PASSWORD = config['minecraft']['rcon_password']
+DISCORD_BOT_TOKEN = config['discord']['bot_token']
+DISCORD_CHANNEL_ID = config['discord']['channel_id']
 
 # Regex for Minecraft server log filtering
 #\1 is username, \2 is message
