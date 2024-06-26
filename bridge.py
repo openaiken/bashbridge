@@ -14,8 +14,8 @@ try:
     config_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'config.ini')
     config.read(config_file_path)
 except Exception as e:
-    print("Can't open config file (config.ini); {e}")
-    exit
+    printf("Can't open config file (config.ini); {e}", flush=True)
+    exit()
 MC_LOG_FILE_PATH = config['minecraft']['log_file_path']
 MINECRAFT_SERVER_IP = config['minecraft']['server_ip']
 RCON_PORT = config.getint('minecraft', 'rcon_port')
